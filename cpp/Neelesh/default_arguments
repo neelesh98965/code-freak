@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+class simple{
+    int data1;
+    int data2;
+    int data3;
+    public:
+    simple(int a,int b = 9,int c=8){
+        data1 = a;
+        data2 = b;
+        data3 = c;
+    }
+    void print(){
+        cout<<"The value of data1 , data2 and data3 is "<<data1<<" , "<<data2<<" and "<<data3<<endl;
+    }
+};
+
+int main()
+{
+    simple x(1),y(3,4),z(5,0,0);
+    x.print();
+    y.print();
+    z.print();
+    return 0;
+}
