@@ -1,0 +1,32 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+class point{
+    int a,b;
+    public:
+    point(int x,int y){
+        a=x;
+        b=y;
+    }
+    friend void distancefor(point o,point p); 
+    void displaypoint(){
+        cout<<"Your point is ("<<a<<","<<b<<")"<<endl;
+    }
+};
+void distancefor(point o,point p){
+    int dis;
+    dis = sqrt(pow((o.a - p.a),2)+pow((o.b - p.b),2));
+    cout<<dis<<endl;
+}
+
+int main()
+{
+    point p(1,1);
+    p.displaypoint();
+    point q(1,1);
+    q.displaypoint();
+
+    distancefor(p,q);
+    return 0;
+}
