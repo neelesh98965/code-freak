@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+
+class student{
+    protected:
+    int number;
+    public:
+    void set_number(int a){
+        number = a;
+    }
+    void display_number(){
+        cout<<"Your Roll No. is "<<number<<endl;
+    }
+};
+
+class marks : virtual public student{
+    protected:
+    float maths, physics;
+    public:
+    void  set_marks(float m1 , float m2){
+        maths = m1;
+        physics = m2;
+    }
+    void display_marks(){
+        cout<<"Your marks in maths are "<<maths<<endl
+        <<"Your marks in physics are "<<physics<<endl;
+    }
+};
+
+class sports : virtual public student{
+    protected:
+    int score;
+    public:
+    void set_score(int s){
+        score = s;
+    }
+    void display_score(){
+        cout<<"Your sports score is "<<score<<endl;
+    }
+};
+
+class result : public marks , public sports{
+    private:
+    float total;
+    public:
+    void display(){
+    total = maths + physics + score;
+    display_number();
+    display_marks();
+    display_score();
+    cout<<"Your total score is "<<total<<endl;
+    }
+};
+
+int main()
+{
+    result Neelesh;
+    Neelesh.set_number(2004133);
+    Neelesh.set_marks(95.2 , 98.5);
+    Neelesh.set_score(9);
+    Neelesh.display();
+    return 0;
+}
